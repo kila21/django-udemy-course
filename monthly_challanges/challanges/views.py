@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 
 # Create your views here.
+def monthly_challange_by_number(request, month):
+    return HttpResponse(month)
 
 def monthly_challange(request, month):
     if month == 'january':

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 monthly_challanges = {
     'january': 'Eat No Meat for the entire month!',
@@ -18,7 +18,11 @@ monthly_challanges = {
 
 # Create your views here.
 def monthly_challange_by_number(request, month):
-    return HttpResponse(month)
+    months = list(monthly_challanges.keys())
+    if month > len(months):
+        return HttpResponseNotFound('Invalid Month')
+    redirect_month = months[month-1]
+    return HttpResponseRedirect(redirect_month)
 
 def monthly_challange(request, month):
     try:

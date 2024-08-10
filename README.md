@@ -1,0 +1,3 @@
+# Learning Course Project. keep working...
+
+## https://www.udemy.com/course/python-django-the-practical-guide/?couponCode=LETSLEARNNOW

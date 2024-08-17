@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import Http404, HttpResponseNotFound, HttpResponseRedirect
 
 from django.template.loader import render_to_string
 
@@ -46,7 +46,11 @@ def monthly_challange(request, month):
          
         # return HttpResponse(render_to_string('challanges/challange.html'))
     except:
-        return HttpResponseNotFound('Month isnt Supported!')
+        raise Http404()
+
+        # respons_data = render_to_string('404.html')
+        # return HttpResponseNotFound(respons_data)
+        # return HttpResponseNotFound('Month isnt Supported!')
         # return render(request, 'challanges.html')
     
    

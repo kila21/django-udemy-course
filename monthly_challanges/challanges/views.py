@@ -21,19 +21,12 @@ monthly_challanges = {
 
 # Create your views here.
 def index(request):
-    list_items = ''
-    months = list(monthly_challanges.keys())
     
-    for month in months:
-        capitalized = month.capitalize()
-        list_items += f'<li><a href="{month}">{capitalized}</a></li>'
-
-    response = f"""
-        <ul>
-        {list_items}
-        </ul>
-    """
-    return HttpResponse(response)
+    months = list(monthly_challanges.keys())
+ 
+    return render(request, 'challanges/index.html', {
+        'months': months
+    })
 
 def monthly_challange_by_number(request, month):
     months = list(monthly_challanges.keys())

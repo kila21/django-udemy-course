@@ -16,7 +16,7 @@ monthly_challanges = {
     'september': 'september challange',
     'octomber': 'octomber challange',
     'november': 'november challange',
-    'december': 'december challange',
+    'december': None
 }
 
 # Create your views here.
@@ -38,6 +38,8 @@ def monthly_challange_by_number(request, month):
 def monthly_challange(request, month):
     try:
         challange_text = monthly_challanges[month]
+        print(challange_text)
+        print(month)
 
          # return HttpResponse(challange_text)
         return render(request, 'challanges/challange.html', {"text": challange_text, "month_name": month})

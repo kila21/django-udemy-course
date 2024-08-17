@@ -47,7 +47,7 @@ def monthly_challange(request, month):
         challange_text = monthly_challanges[month]
 
          # return HttpResponse(challange_text)
-        return render(request, 'challanges/challange.html', {"text": challange_text})
+        return render(request, 'challanges/challange.html', {"text": challange_text, "month_name": month})
          
         # return HttpResponse(render_to_string('challanges/challange.html'))
     except:

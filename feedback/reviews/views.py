@@ -3,5 +3,6 @@ from django.shortcuts import render
 # Create your views here.
 
 
-def review():
-    return
+def review(request):
+
+    return render(request, 'reviews/review.html')

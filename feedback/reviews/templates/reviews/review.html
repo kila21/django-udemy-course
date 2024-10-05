@@ -7,8 +7,11 @@
 <body>
     <form action='/' method='POST'>
         {% csrf_token %}
-        {{ form }}
+        {% comment %} {{ form }} {% endcomment %}
+        {{ form.user_name.label_tag }}
+        {{ form.user_name }}
+        {{ form.user_name.errors }}
         <button type='submit'>Send</button>
     </form>
 </body>
-</html>
+</html> 
